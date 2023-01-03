@@ -1,0 +1,46 @@
+<script language="JavaScript" type="text/javascript">
+<!--
+var numOfTickets, seasonType, tourType;
+var numOfTickets, pricePerSeason, pricePerTour, totalChargePerAdmission, totalCharge;
+
+//Assumptions - Constants:
+var inSeasonRate = 15;
+var offSeasonRate = 10;
+var	guidedRate = 5;
+var	selfGuideRate = 2;
+
+//Input:
+numOfTickets = prompt("How many tickets?", "");
+seasonType = prompt("In season ticket? yes or no", "");
+tourType = prompt("Guided tour? yes or no", "");
+
+//Calculations/logic:
+if (seasonType == "yes")
+{// start inSeason
+	pricePerSeason = inSeasonRate;
+}// stop inSeason
+else
+{// start offSeason
+	pricePerSeason = offSeasonRate;
+}// stop offSeason
+
+if (tourType == "yes")
+{// start guided
+	pricePerTour = guidedRate;
+}//stop guided
+else
+{// start selfGuide
+	pricePerTour = selfGuideRate;
+}// stop selfGuide
+
+totalChargePerAdmission = pricePerSeason + pricePerTour;
+totalCharge = totalChargePerAdmission * numOfTickets;
+
+//Output:
+document.write("Number of tickets: " + numOfTickets);
+document.write("<br>Charge for one ticket: $" + pricePerSeason.toFixed(2));
+document.write("<br >Charge for one tour: $" + pricePerTour.toFixed(2));
+document.write("<br>Charge for ticket and tour: $" + totalChargePerAdmission.toFixed(2));
+document.write("<br>The total charge is: $" + totalCharge.toFixed(2));
+//-->
+</script>
